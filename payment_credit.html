@@ -10,6 +10,16 @@
   <link rel="stylesheet" href="assets/css/main_payment.css">
 
   <style>
+    /* .order_payment_credit_list {
+      padding: 0px 16px;
+  } */
+
+    /* .arrow_before {
+      font-family: 'Glyphicons Halflings';
+      content: "\e114";
+      float: right;
+      transition: all 0.5s;
+    } */
   </style>
 </head>
 
@@ -142,48 +152,97 @@
     </div>
 
     <!-- QR Code -->
-    <div class="border-bottom py-2 bg-light">
+    <div class="border-bottom py-2">
       <div class="row g-0 ">
-        <div class="col-12">
 
+        <div class="col-12">
           <div class="text-center mb-2">
-            <span class="fw-bold">ขำระผ่าน QR พร้อมเพย์</span>
+            <span class="fw-bold">ขำระผ่าน บัตรเครดิต/บัตรเครดิต</span>
           </div>
           <div class="text-center mb-2">
-            <img class="img-fluid" src="assets/img/desktop-payment-qrcode.png" alt="..." />
+            <img src="assets/img/desktop-payment-credit-gateway.png" alt="..." />
           </div>
-          <div class="text-center mb-2">
-            <span class="text-warning">รอการชำระเงิน</span>
-          </div>
-          <div class="text-center mb-2">
-            <button type="button" class="btn btn-outline-dark rounded-0 px-5">
-              <img src="assets/img/download.png" class="icon_size">&nbsp;บันทึก QR</button>
-          </div>
-          
         </div>
+
+        <div class="col-12 px-3">
+
+          <div class="mb-2">
+            <div class="form-check text-start ">
+              <input class="form-check-input " type="radio" name="choose_credit" id="1" value="1">
+              <label class="form-check-label" for="exampleRadios1">
+                <span class="">****2366</span>
+                <!-- <img src="assets/img/desktop-payment-visa.svg" alt="..." class="me-2" > -->
+                <span class="">VISA - Ploy</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check text-start">
+              <input class="form-check-input " type="radio" name="choose_credit" id="2" value="2"
+                checked>
+              <label class="form-check-label" for="exampleRadios1">บัตรอื่นๆ</label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">หมายเลขบัตร</label>
+            <input type="text" class="form-control rounded-0" id="credit_num" placeholder="0000 0000 0000 0000">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">วันหมดอายุบัตรเครดิต</label>
+            <input type="text" class="form-control rounded-0" id="credit_expire" placeholder="MM/YY">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">CVV</label>
+            <input type="text" class="form-control rounded-0" id="credit_cvv" placeholder="000">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">ชื่อเจ้าของบัตร</label>
+            <input type="text" class="form-control rounded-0" id="credit_name" placeholder="000">
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check">
+              <input class="form-check-input rounded-0" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">บันทึกข้อมูลบัตรเครดิต</label>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
 
     <!-- Detail Footer -->
-    <div class="border-bottom">
-      <div class="row ">
-        <div class="col-12">
+    <div class="border-bottom py-2">
 
-          <div class="text-start px-3 mb-2">
-            <p class="mb-2 mt-2">
-              วิธีชำระเงินผ่าน QR Promptpay <br>
-            </p>
-            <p class="ms-2 mb-2">
-              1. คลิกปุ่ม “บันทึก QR”หรือแคปหน้าจอ <br>
-              2. เปิดแอพพลิเคชัน โมบายแบงก์กิ้ง เลือกเมนูสแกน<br>
-              3. กดเลือกรูปจากอัลบั้ม <br>
-              4. เลือกรูปคิวอาร์โค้ดที่บันทึกไว้หน้าจอจะแสดงรายละเอียดการชำระเงิน <br>
-              5. ตรวจสอบยอด และยืนยันการชำระเงิน <br>
-            </p>
+      <div class="row g-0 py-1 px-3">
+        <div class="col-6">
+          <div class="text-start ">
+            <span>ใบกำกับภาษีเต็มรูป</span>
           </div>
-
+        </div>
+        <div class="col-6">
+          <div class="text-end ">
+            <a href="#tax_detail" class="text-dark" data-bs-toggle="collapse">ขอใบกำกับภาษี</a>
+          </div>
         </div>
       </div>
+
+      <div class="row g-0">
+        <div class="col-12 bg-light">
+          <div id="tax_detail" class="collapse p-3 border-top">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- Detail Footer -->
@@ -202,7 +261,9 @@
 
 
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
 
+  </script>
 </body>
 
 </html>
