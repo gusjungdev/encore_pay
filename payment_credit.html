@@ -248,7 +248,7 @@
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
 
-    function choose_credit(el){
+    choose_credit = (el) => {
         console.log(el.value);
         if(el.value == 1){
           document.getElementById('credit_num').disabled = true;
@@ -263,7 +263,6 @@
           document.getElementById('credit_name').disabled = false;
           document.getElementById('credit_save').disabled = false;
         }
-
     }
 
   </script>
