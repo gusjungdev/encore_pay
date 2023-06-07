@@ -10,16 +10,6 @@
   <link rel="stylesheet" href="assets/css/main_payment.css">
 
   <style>
-    /* .order_payment_credit_list {
-      padding: 0px 16px;
-  } */
-
-    /* .arrow_before {
-      font-family: 'Glyphicons Halflings';
-      content: "\e114";
-      float: right;
-      transition: all 0.5s;
-    } */
   </style>
 </head>
 
@@ -43,7 +33,7 @@
     <!-- Timelie -->
     <div class="border-bottom py-3">
 
-      <div class="col-12">
+      <div class="col-12  d-flex justify-content-center">
         <div class="d-flex justify-content-center timeline_top">
 
           <div class="timeline_circle timeline_active">
@@ -77,7 +67,7 @@
         </div>
       </div>
 
-      <div class="col-12">
+      <div class="col-12  d-flex justify-content-center">
         <div class="timeline_bottom">
           <div class="row g-0">
 
@@ -152,9 +142,8 @@
     </div>
 
     <!-- QR Code -->
-    <div class="border-bottom py-2">
+    <div class="border-bottom py-2 bg-light">
       <div class="row g-0 ">
-
         <div class="col-12">
           <div class="text-center mb-2">
             <span class="fw-bold">ขำระผ่าน บัตรเครดิต/บัตรเครดิต</span>
@@ -163,12 +152,25 @@
             <img src="assets/img/desktop-payment-credit-gateway.png" alt="..." />
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="col-12 px-3">
+    <div class="border-bottom py-2">
+      <div class="row px-3">
 
-          <div class="mb-2">
+        <!-- <div class="col-12">
+          <div class="text-center mb-2">
+            <span class="fw-bold">ขำระผ่าน บัตรเครดิต/บัตรเดบิต</span>
+          </div>
+          <div class="text-center mb-2">
+            <img src="assets/img/desktop-payment-credit-gateway.png" alt="..." />
+          </div>
+        </div> -->
+
+
+          <div class="col-12 mb-2">
             <div class="form-check text-start ">
-              <input class="form-check-input " type="radio" name="choose_credit" id="1" value="1">
+              <input class="form-check-input " type="radio" name="choose_credit"  onclick="choose_credit(this);" value="1">
               <label class="form-check-label" for="exampleRadios1">
                 <span class="">****2366</span>
                 <!-- <img src="assets/img/desktop-payment-visa.svg" alt="..." class="me-2" > -->
@@ -177,42 +179,40 @@
             </div>
           </div>
 
-          <div class="mb-3">
+          <div class="col-12 mb-3">
             <div class="form-check text-start">
-              <input class="form-check-input " type="radio" name="choose_credit" id="2" value="2"
+              <input class="form-check-input " type="radio" name="choose_credit"  onclick="choose_credit(this);" value="2"
                 checked>
               <label class="form-check-label" for="exampleRadios1">บัตรอื่นๆ</label>
             </div>
           </div>
 
-          <div class="mb-3">
+          <div class="col-md-6 col-12 mb-3">
             <label class="form-label">หมายเลขบัตร</label>
-            <input type="text" class="form-control rounded-0" id="credit_num" placeholder="0000 0000 0000 0000">
+            <input type="text" class="form-control rounded-0" id="credit_num" placeholder="0000 0000 0000 0000" >
           </div>
 
-          <div class="mb-3">
+          <div class="col-md-6 col-12 mb-3">
             <label class="form-label">วันหมดอายุบัตรเครดิต</label>
             <input type="text" class="form-control rounded-0" id="credit_expire" placeholder="MM/YY">
           </div>
 
-          <div class="mb-3">
+          <div class="col-md-6 col-12 mb-3">
             <label class="form-label">CVV</label>
             <input type="text" class="form-control rounded-0" id="credit_cvv" placeholder="000">
           </div>
 
-          <div class="mb-3">
+          <div class="col-md-6 col-12 mb-3">
             <label class="form-label">ชื่อเจ้าของบัตร</label>
             <input type="text" class="form-control rounded-0" id="credit_name" placeholder="000">
           </div>
 
-          <div class="mb-3">
+          <div class="col-12 mb-3">
             <div class="form-check">
-              <input class="form-check-input rounded-0" type="checkbox" value="" id="flexCheckDefault">
+              <input class="form-check-input rounded-0" type="checkbox" value="1" id="credit_save" >
               <label class="form-check-label" for="flexCheckDefault">บันทึกข้อมูลบัตรเครดิต</label>
             </div>
           </div>
-
-        </div>
 
       </div>
     </div>
@@ -228,13 +228,13 @@
         </div>
         <div class="col-6">
           <div class="text-end ">
-            <a href="#tax_detail" class="text-dark" data-bs-toggle="collapse">ขอใบกำกับภาษี</a>
+            <a href="#tax_detail" class="text-dark" data-bs-toggle="collapse">ขอใบกำกับภาษี</a> <span style="text-decoration: none;"> ></span>
           </div>
         </div>
       </div>
 
       <div class="row g-0">
-        <div class="col-12 bg-light">
+        <div class="col-12 ">
           <div id="tax_detail" class="collapse p-3 border-top">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -248,20 +248,33 @@
     <!-- Detail Footer -->
     <div class="bg-light p-3">
       <div class="row g-0 ">
-        <div class="col-12">
-          <div class="text-center ">
-            <button type="button" class="btn btn-dark rounded-0 w-100">ตกลง</button>
-          </div>
+        <div class="d-grid gap-2 col-md-6 col-12 mx-auto">
+          <button type="button" class="btn btn-dark rounded-0">ตกลง</button>
         </div>
       </div>
     </div>
 
-
   </div>
-
-
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
+
+    function choose_credit(el){
+        console.log(el.value);
+        if(el.value == 1){
+          document.getElementById('credit_num').disabled = true;
+          document.getElementById('credit_expire').disabled = true;
+          document.getElementById('credit_cvv').disabled = true;
+          document.getElementById('credit_name').disabled = true;
+          document.getElementById('credit_save').disabled = true;
+        }else{
+          document.getElementById('credit_num').disabled = false;
+          document.getElementById('credit_expire').disabled = false;
+          document.getElementById('credit_cvv').disabled = false;
+          document.getElementById('credit_name').disabled = false;
+          document.getElementById('credit_save').disabled = false;
+        }
+
+    }
 
   </script>
 </body>

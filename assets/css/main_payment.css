@@ -3,8 +3,12 @@
   }
 
   .container {
-    width: 400px !important;
+    width: 900px !important;
   }
+
+  /* .container_head {
+    width: 400px !important;
+  } */
 
   /* 
   .full_height {
@@ -26,10 +30,12 @@
 
   .timeline_top {
     padding: 1px 50px;
+    width: 400px !important;
   }
 
   .timeline_bottom {
     padding-top: 8px;
+    width: 400px !important;
   }
 
   .timeline_circle {
